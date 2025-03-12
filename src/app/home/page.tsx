@@ -15,6 +15,7 @@ const HeaderBar = styled.div`
   align-items: center;
   // justify-content: space-between;
   padding: 16px 24px;
+  width: 100vh;
   background-color: #f8f9fa;
   border-bottom: 1px solid #dee2e6;
 `;

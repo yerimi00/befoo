@@ -16,16 +16,25 @@ interface GuideCardProps {
 const CardContainer = styled.div`
   position: relative;
   border-radius: 8px;
-  overflow: hidden;
+  overflow-x: auto;
   margin-right: 12px;
   width: 160px;
   height: 240px;
+  flex: 0 0 auto; /*  flex-grow: 0, flex-shrink: 0, flex-basis: auto */
+  scroll-snap-align: start;
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
 `;
 
 const BookmarkButton = styled.div`
   position: absolute;
   top: 8px;
   right: 8px;
+  z-index: 10;
 `;
 
 const CardContent = styled.div`
@@ -35,6 +44,7 @@ const CardContent = styled.div`
   right: 0;
   padding: 8px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  z-index: 5;
 `;
 
 const CardTitle = styled.h3`
@@ -57,7 +67,15 @@ export default function GuideCard({
 }: GuideCardProps) {
   return (
     <CardContainer>
-      <Image src={imageUrl || testImg} alt={title} width={160} height={240} />
+      <ImageWrapper>
+        <Image
+          src={imageUrl || testImg}
+          alt={title}
+          fill
+          style={{ objectFit: "cover" }}
+          sizes="160px"
+        />
+      </ImageWrapper>
       <BookmarkButton>
         <FaRegBookmark color="white" size={20} />
       </BookmarkButton>

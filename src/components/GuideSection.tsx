@@ -18,11 +18,11 @@ interface GuideSectionProps {
 
 const SectionContainer = styled.div`
   margin: 24px 0 16px 0;
+  width: 100%;
 `;
 
 const SectionHeader = styled.div`
   display: flex;
-  //   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
   margin-bottom: 12px;
@@ -35,27 +35,22 @@ const SectionTitle = styled.h2`
   margin: 0;
 `;
 
-const ViewAllButton = styled.button`
-  font-size: 14px;
-  color: #6b7280;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-`;
-
 const CardsContainer = styled.div`
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   padding-bottom: 16px;
   padding-left: 16px;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+
+  -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
   }
 `;
+
 export default function GuideSection({
   title,
   showAllButton = true,

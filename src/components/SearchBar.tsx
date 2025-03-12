@@ -6,10 +6,11 @@ import styled from "styled-components";
 
 const SearchContainer = styled.div`
   display: flex;
+  width: 280px;
   align-items: center;
   background-color: #f3f4f6;
   border-radius: 9999px;
-  padding: 8px 16px;
+  padding: 8px;
   margin: 12px 16px;
 `;
 
