@@ -16,12 +16,12 @@ interface GuideCardProps {
 const CardContainer = styled.div`
   position: relative;
   border-radius: 8px;
-  overflow-x: auto;
+  overflow: hidden;
   margin-right: 12px;
   width: 160px;
+  min-width: 160px;
   height: 240px;
-  flex: 0 0 auto; /*  flex-grow: 0, flex-shrink: 0, flex-basis: auto */
-  scroll-snap-align: start;
+  flex: 0 0 auto;
 `;
 
 const ImageWrapper = styled.div`
@@ -35,6 +35,7 @@ const BookmarkButton = styled.div`
   top: 8px;
   right: 8px;
   z-index: 10;
+  cursor: pointer;
 `;
 
 const CardContent = styled.div`
@@ -52,12 +53,24 @@ const CardTitle = styled.h3`
   font-weight: 700;
   font-size: 18px;
   margin: 0;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const CardDescription = styled.p`
   color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
   margin: 4px 0 0 0;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export default function GuideCard({
